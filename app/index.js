@@ -1,10 +1,14 @@
 import express from "express";
+import cors from "cors";
 
 import { router as api } from "./api/index.js";
 export const app = express();
 
 // Parse Json
 app.use(express.json());
+
+// Add CORS
+app.use(cors());
 
 // Mount API
 app.use("/api", api);
